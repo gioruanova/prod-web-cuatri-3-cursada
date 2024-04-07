@@ -159,8 +159,9 @@ class Personaje
         }
 
     }
-    public static function simularPelea( $personaje1,  $personaje2):void{
-    
+    public static function simularPelea($personaje1, $personaje2): void
+    {
+
         $tipoDePelea = rand(1, 2);
 
         if ($tipoDePelea == 1) {
@@ -172,7 +173,17 @@ class Personaje
             echo "<br>";
             $personaje1->defender($personaje2);
         }
-        
+
+    }
+
+    public static function simularMultPelea($personaje1, $personaje2, $cantRondas): void
+    {
+        for ($i = 0; $i < $cantRondas; $i++) {
+            Personaje::simularPelea($personaje1, $personaje2);
+            echo "<br>";
+            echo "<br>";
+        }
     }
 }
+
 
